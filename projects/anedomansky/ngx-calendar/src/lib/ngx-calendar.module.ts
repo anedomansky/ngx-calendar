@@ -1,5 +1,6 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 
+import { NgxCalendarComponent } from '../public-api';
 import {
   getDefaultNgxCalendarConfig,
   NgxCalendarConfig,
@@ -7,11 +8,10 @@ import {
 } from './config/ngx-calendar-config';
 import { SampleServiceToken } from './core/services/sample/sample.config';
 import { SampleService } from './core/services/sample/sample.service';
-import { SampleComponent } from './sample/sample.component';
 
 @NgModule({
   declarations: [],
-  imports: [SampleComponent],
+  imports: [NgxCalendarComponent],
   providers: [
     {
       provide: SampleServiceToken,
@@ -22,7 +22,7 @@ import { SampleComponent } from './sample/sample.component';
       useValue: getDefaultNgxCalendarConfig(),
     },
   ],
-  exports: [SampleComponent],
+  exports: [NgxCalendarComponent],
 })
 export class NgxCalendarModule {
   static forRoot(

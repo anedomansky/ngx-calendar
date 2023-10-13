@@ -5,9 +5,19 @@
   "projects": {
     "@anedomansky/ngx-calendar": {
       "projectType": "library",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss",
+          "changeDetection": "OnPush",
+          "standalone": true
+        },
+        "@schematics/angular:directive": {
+          "standalone": true
+        }
+      },
       "root": "projects/anedomansky/ngx-calendar",
       "sourceRoot": "projects/anedomansky/ngx-calendar/src",
-      "prefix": "product",
+      "prefix": "ngx-calendar",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
@@ -30,7 +40,12 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
+          "style": "scss",
+          "changeDetection": "OnPush",
+          "standalone": true
+        },
+        "@schematics/angular:directive": {
+          "standalone": true
         }
       },
       "root": "projects/ngx-calendar-app",
